@@ -25,9 +25,5 @@ async def hello(ctx, name: str = None):
 # ----------------- TODO: MAKE CHANGES ABOVE ----------------- #
 
 
-def serve_bot(token):
-    bot.run(token)
-
-
 if __name__ == "__main__":
-    main(serve_bot)
+    main(bot)
