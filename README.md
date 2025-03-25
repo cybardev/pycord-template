@@ -23,24 +23,10 @@ Discord bot template using Pycord, with instructions on free Render deployment
 5. Create a bot in the [Discord Developer Portal](<https://discord.com/developers/applications> "link to Discord Developer Portal")
     - copy the bot token and store it securely; this will be needed for deployment
 
-6. Edit [render.yaml](./render.yaml) and set image URL to `ghcr.io/<your_username>/<your_repository>:latest`
+6. Deploy bot image to Azure Container Apps through [portal.azure.com](https://portal.azure.com)
+    - add your bot token (from step 5) as a Secret and source it to the value of an Environment Variable `BOT_TOKEN` during deployment
 
-7. Click on the <kbd>Deploy to Render</kbd> button under [Deployment](#deployment)
+7. Add your bot to a Discord server and see it in action
 
-8. Add your bot token (from step 5) as the value of Environment Variable `BOT_TOKEN` and create the web service
-
-9. Save the public URL of the web service (in the format `https://<service_name>.onrender.com`)
-    - making a request at this link (in a browser or programmatically) will wake up the bot when Render spins it down due to idleness (it's a free tier limitation; to have your bot always on, upgrade and change service type to [background worker](<https://render.com/docs/background-workers> "Render Background Workers documentation"))
-
-10. Go to the Settings page of the deployed web service from your Render Dashboard and copy the Render Deploy Hook URL
-
-11. Add a repository secret called `RENDER_DEPLOY_HOOK` and paste the copied value from the previous step
-
-12. Add your bot to a Discord server and see it in action
-
-## Deployment
-
-[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy)
-
-**PS**: If the above button does not work, you can replace the link (in the last parentheses) with this format:
-- `https://render.com/deploy?repo=https://github.com/<your_username>/<your_repository>/tree/<branch_to_deploy>`
+> [!NOTE]
+> Azure was chosen here because it's free and doesn't spin down when idle. Feel free to deploy on a platform of your choice.

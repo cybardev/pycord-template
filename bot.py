@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 
-import discord
+import os
 
-from utils import main
+import discord
 
 bot = discord.Bot()
 
@@ -26,4 +26,4 @@ async def hello(ctx, name: str = None):
 
 
 if __name__ == "__main__":
-    main(bot)
+    bot.run(os.getenv("BOT_TOKEN"))
