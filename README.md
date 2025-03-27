@@ -1,6 +1,6 @@
 # pycord-template
 
-Discord bot template using Pycord, with instructions on free Render deployment
+Discord bot template using Pycord, with instructions on free Azure deployment
 
 ## Usage
 
